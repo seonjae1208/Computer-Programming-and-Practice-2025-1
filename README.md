@@ -14,6 +14,17 @@ void x() {}
 ```
 
 #### 관련 C89 표준
+
+3.7.1 Function definitions
+
+> **Constraints**
+> 
+> The identifier declared in a function definition (which is the name of the function) shall have a function type ...
+> 
+> The return type of a function shall be void or an object type ...
+> 
+> ...
+
 3.7 EXTERNAL DEFINITIONS
 > **Syntax**
 >
@@ -27,17 +38,7 @@ void x() {}
 >
 > ... the unit of program text ... is a translation unit, which consists of a sequence of external declarations.
 > These are described as "external" because they appear outside any function ...
-
-3.7.1 Function definitions
-
-> **Constraints**
-> 
-> The identifier declared in a function definition (which is the name of the function) shall have a function type ...
-> 
-> The return type of a function shall be void or an object type ...
-> 
-> ...
-
-> **Semantics**
-> 
-> ... function definition specifies the name of the function being defined ...
+>
+> An external definition is an external declaration that is also a definition of a function or an object.
+> If an identifier declared with external linkage is used in an expression (...),
+> somewhere in the entire program there shall be exactly one external definition for the identifier.
