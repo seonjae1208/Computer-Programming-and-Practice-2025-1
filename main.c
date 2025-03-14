@@ -10,4 +10,22 @@
  * 함수를 실행할 때 실행되는 문장들을 정합니다. 
  */
 
+/*<<<<<<< Updated upstream*/
 /* To Do: 타입이 void고, 이름이 x고, 문장리스트가 없는 함수를 정의해보세요 */
+/*=======*/
+/* To Do: 반환 타입이 int이고 이름이 five인 함수를 선언해보세요 */
+int five();
+
+int main() {
+	return five();
+}
+
+/* 
+ * 함수 이름: five
+ * 반환 타입: int
+ * five()는 5를 결과값으로 반환한다.
+ */
+int five() {
+	return 5;
+}
+/*>>>>>>> Stashed changes*/
