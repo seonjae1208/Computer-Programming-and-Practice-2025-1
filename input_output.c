@@ -1,67 +1,57 @@
 #include <stdio.h>
-static char format[10] = { 0 };
-static int offset = 0;
+
+
 /* 
- * add_to_format(char c) 함수
+ * repeat_f 함수
  *
- * 입력받은 문자를 포맷에 추가합니다.
- * 현재 포맷에 문자가 10개였으면, 에러 메시지 출력 후 포맷을 초기화합니다.
+ * 함수를 입력받아서 128번 반복해서 실행합니다. 
+ * 실행할 함수는 반환 타입이 void고, 매개변수가 int 하나여야 합니다. 
+ * i를 0부터 127까지 반복해서 실행합니다. 
  * 
  * 매개변수: 
- * c: char 타입. 포맷에 추가할 문자
+ * f: 함수 포인터 타입 (반환타입 void, 매개변수타입 int)
  *
  * 반환값:
  * 없음
  */
-void add_to_format(char c);
+void repeat_f(void (*f)(int i));
 
-void add_to_format(char c){
-  if (offset == 10) {
-    int i;
-    for (i = 0; i < 10; i++) {
-      format[i] = 0;
-    }
-    offset = 0;
-  }
-  format[offset++] = c;
+void repeat_f(void (*f)(int i)) {
+  int i = 0;
+  while (i < 128)
+    f(i++);
 }
 
 /* 
- * print_formatted(char a, char b) 함수
+ * print_char 함수
  *
- * 정해진 포맷에 따라 인자 두개를 화면에 출력합니다.
+ * 숫자를 매개변수로 입력받아서 화면에 표시할 내용에 그 숫자에 해당하는 문자를 추가합니다.
  * 
  * 매개변수: 
- * a: char 타입. 출력할 첫번째 문자
- * b: char 타입. 출력할 두번째 문자
+ * i: int 타입. 화면에 해당하는 문자를 표시할 숫자
+ *
  * 반환값:
  * 없음
  */
-void print_formatted(char a, char b);
+void print_char(int i);
 
-void print_formatted(char a, char b){
-  printf(format, a, b);
+void print_char(int i) {
+  printf("%c", i);
 }
 
 /* 
- * input_char 함수
+ * print_int 함수
  *
- * char 타입의 문자 하나를 키보드로 입력받습니다.
- * 
- * 이전에 처리하지 않은 키보드 입력이 임시 저장소에 없으면 키보드 입력을 받기 위해 기다립니다.
- * 키보드 입력을 받을 때는 엔터키를 누르면 키보드 입력 내용이 임시 저장소에 저장됩니다.
- * 임시 저장소에서 첫번째 문자를 빼서 반환합니다.
+ * 숫자를 매개변수로 입력받아서 화면에 표시할 내용에 그 숫자를 추가합니다.
  * 
  * 매개변수: 
- * 없음
+ * i: int 타입. 화면에 표시할 문자
  *
  * 반환값:
- * char 타입의 문자
+ * 없음
  */
-char input_char();
+void print_int(int i);
 
-char input_char() {
-  char c;
-  scanf_s("%1c", &c);
-  return c;
+void print_int(int i) {
+  printf("%d", i);
 }
