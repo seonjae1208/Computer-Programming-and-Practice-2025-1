@@ -1,6 +1,8 @@
-# 문자출력 과제
+# 큰정수입력 작은정수출력 과제
 
-print_char.c 소스파일에는 화면에 문자를 출력하는 `void print_char(char)` 함수가 정의되어 있습니다.
+input_output.c 소스파일에는 화면에 Enter a real number. 라고 출력하는 
+
+문자를 출력하는 `void print_char(char)` 함수가 정의되어 있습니다.
 이 함수를 써서 화면에 linux라고 출력하는 것이 과제입니다.
 
 #### 코드 예시:
