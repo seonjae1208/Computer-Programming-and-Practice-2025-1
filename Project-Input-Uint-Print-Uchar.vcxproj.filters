@@ -12,7 +12,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="print_char.c">
+    <ClCompile Include="input_output.c">
       <Filter>c 소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
