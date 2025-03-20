@@ -39,5 +39,7 @@ char input_char();
 
 int main() {
 	/* To Do: 주어진 함수들을 활용해서 문자 세개를 입력받고, 화면에 출력해보세요 */
+
+	
 	return 0;
 }
