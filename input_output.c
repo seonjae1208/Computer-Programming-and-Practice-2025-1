@@ -13,7 +13,7 @@
 void print_uchar(unsigned char uc);
 
 void print_uchar(unsigned char uc) {
-  printf("0x%x", uc);
+  printf("0x%2x", uc);
 }
 
 /* 
