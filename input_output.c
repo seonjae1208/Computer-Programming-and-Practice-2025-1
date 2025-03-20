@@ -43,7 +43,7 @@ unsigned int input_uint() {
   int result = -1;
 
   printf("Enter a hexadecimal number (maximum 8 digits/characters):\n");
-  result = fscanf("%8x", &value);
+  result = scanf_s("%8x", &value);
 
   if (result < 0) {
     printf("Error: input failure\n");
