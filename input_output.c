@@ -1,80 +1,42 @@
 #include <stdio.h>
 /* 
- * print_uchar 함수
+ * print_3chars 함수
  *
- * 화면에 unsigned char 타입의 숫자를 16진수로 표기합니다.
+ * 화면에 char 타입의 문자 세개를 표시합니다.
  * 
  * 매개변수: 
- * uc: unsigned char 타입. 화면에 표시할 숫자
+ * a: char 타입. 화면에 표시할 첫번째 문자
+ * b: char 타입. 화면에 표시할 두번째 문자
+ * c: char 타입. 화면에 표시할 세번째 문자
  *
  * 반환값:
  * 없음
  */
-void print_uchar(unsigned char uc);
+void print_3chars(char a, char b, char c);
 
-void print_uchar(unsigned char uc) {
-  printf("0x%x", uc);
+void print_3chars(char a, char b, char c);
+  printf("3 characters are %c, %c, %c", a, b, c);
 }
 
 /* 
- * input_uint 함수
+ * input_char 함수
  *
- * unsigned int 타입의 16진수 숫자를 키보드로 입력받습니다.
+ * char 타입의 문자 하나를 키보드로 입력받습니다.
  * 
- * 화면에 Enter a hexadecimal number (maximum 8 digits/characters): 라고 출력합니다.
- * 키보드 입력을 받기 위해 기다립니다.
- * 엔터키를 누르면 입력받은 내용에서 앞의 8글자만 가지고 16진수 숫자로 변환합니다.
- * 
- * 키보드 입력을 받는 도중 문제가 발생하면 Error: input failure 라고 출력합니다.
- * 숫자 변환에 문제가 발생하면 Error: illegal input 라고 출력합니다.
- * 문제가 발생한 경우 반환되는 값은 0입니다.
+ * 이전에 처리하지 않은 키보드 입력이 임시 저장소에 없으면 키보드 입력을 받기 위해 기다립니다.
+ * 키보드 입력을 받을 때는 엔터키를 누르면 키보드 입력 내용이 임시 저장소에 저장됩니다.
+ * 임시 저장소에서 첫번째 문자를 빼서 반환합니다.
  * 
  * 매개변수: 
  * 없음
  *
  * 반환값:
- * unsigned int 타입의 숫자
+ * char 타입의 문자
  */
-unsigned int input_uint();
+char input_char();
 
-unsigned int input_uint() {
-
-  unsigned int value = 0;
-  int result = -1;
-
-  printf("Enter a hexadecimal number (maximum 8 digits/characters):\n");
-  result = scanf_s("%8x", &value);
-
-  if (result < 0) {
-    printf("Error: input failure\n");
-    return 0;
-  }
-  else if (result == 0) {
-    printf("Error: illegal input\n");
-    return 0;
-  }
-  else {
-    printf("The input number is 0x%x\n", value);
-    return value;
-  }
-
-}
-
-/* uint_to_uchar 함수
- * 
- * unsigned int 타입의 값을 받아서 unsigned char 타입의 값을 반환합니다.
- * 16진수로 나타냈을 때 가장 작은 1바이트만 취하고 나머지는 버리는 형식으로 반환합니다.
- * 예시: 0xabcdef -> 0xef
- *
- * 매개변수:
- * x: unsigned int 타입, 타입을 변환할 숫자
- *
- * 반환값:
- * unsigned char 타입, 타입 변환한 후의 숫자
- */
-
-unsigned char uint_to_uchar (unsigned int x);
-
-unsigned char uint_to_uchar (unsigned int x) {
-  return (unsigned char) x;
+char input_char() {
+  char c;
+  scanf_s("%c", &c);
+  return c;
 }
