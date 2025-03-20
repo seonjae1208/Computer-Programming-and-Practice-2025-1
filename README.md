@@ -72,3 +72,12 @@ int main() {
 > pointed to by format that specifies the admissible input sequences and how they are to be
 > converted for assignment, using subsequent arguments as pointers to the objects to
 > receive the converted input. 
+
+3.2.1.2 Signed and unsigned integers
+>
+> When an integer is demoted to an unsigned integer with smaller size,
+> the result is the nonnegative remainder on division by the number one greater than the
+> largest unsigned number that can be represented in the type with smaller size.
+> When an integer is demoted to a signed integer with smaller size, or an unsigned integer
+> is converted to its corresponding signed integer, if the value cannot be represented
+> the result is implementation-defined.
