@@ -1,21 +1,46 @@
 #include <stdio.h>
+static char format[10] = { 0 };
+static int offset = 0;
 /* 
- * print_3chars 함수
+ * add_to_format(char c) 함수
  *
- * 화면에 char 타입의 문자 세개를 표시합니다.
+ * 입력받은 문자를 포맷에 추가합니다.
+ * 현재 포맷에 문자가 10개였으면, 에러 메시지 출력 후 포맷을 초기화합니다.
  * 
  * 매개변수: 
- * a: char 타입. 화면에 표시할 첫번째 문자
- * b: char 타입. 화면에 표시할 두번째 문자
- * c: char 타입. 화면에 표시할 세번째 문자
+ * c: char 타입. 포맷에 추가할 문자
  *
  * 반환값:
  * 없음
  */
-void print_3chars(char a, char b, char c);
+void add_to_format(char c);
 
-void print_3chars(char a, char b, char c){
-  printf("3 characters are %c, %c, %c", a, b, c);
+void add_to_format(char c){
+  if (offset == 10) {
+    int i;
+    for (i = 0; i < 10; i++) {
+      format[i] = 0;
+    }
+    offset = 0;
+  }
+  format[offset++] = c;
+}
+
+/* 
+ * print_formatted(char a, char b) 함수
+ *
+ * 정해진 포맷에 따라 인자 두개를 화면에 출력합니다.
+ * 
+ * 매개변수: 
+ * a: char 타입. 출력할 첫번째 문자
+ * b: char 타입. 출력할 두번째 문자
+ * 반환값:
+ * 없음
+ */
+void print_formatted(char a, char b);
+
+void print_formatted(char a, char b){
+  printf(format, a, b);
 }
 
 /* 
