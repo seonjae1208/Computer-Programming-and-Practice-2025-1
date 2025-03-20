@@ -37,6 +37,6 @@ char input_char();
 
 char input_char() {
   char c;
-  scanf_s("%1c", &c);
+  scanf_s("%1c", &c, 1);
   return c;
 }
