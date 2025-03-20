@@ -14,7 +14,7 @@
  */
 void print_3chars(char a, char b, char c);
 
-void print_3chars(char a, char b, char c);
+void print_3chars(char a, char b, char c){
   printf("3 characters are %c, %c, %c", a, b, c);
 }
 
@@ -37,6 +37,6 @@ char input_char();
 
 char input_char() {
   char c;
-  scanf_s("%c", &c);
+  scanf_s("%1c", &c);
   return c;
 }
