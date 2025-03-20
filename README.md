@@ -19,7 +19,9 @@
 
 #### 코드 예시:
 ```c
-void print_char(char c);
+unsigned int input_uint();
+unsigned char uint_to_uchar(unsigned int);
+void print_uchar(unsigned char);
 
 int main() {
    unsigned int ui = input_uint()          /* unsigned int 자료형의 변수 ui에 입력받은 숫자를 저장 */
