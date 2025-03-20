@@ -22,10 +22,10 @@
 void print_char(char c);
 
 int main() {
-   unsigned int ui = input_uint()  /* unsigned int 자료형의 변수 ui에 입력받은 숫자를 저장 */
+   unsigned int ui = input_uint()          /* unsigned int 자료형의 변수 ui에 입력받은 숫자를 저장 */
    unsigned char uc = 0x01;                /* unsigned char 자료형의 변수 uc */
    unsigned char uc2 = uint_to_uchar (ui)  /* ui의 값을 unsigned char 타입으로 바꿔서 변수 uc2에 저장 */
-   print_uchar(uc);                /* uc의 값을 화면에 출력 */
+   print_uchar(uc);                        /* uc의 값을 화면에 출력 */
    return 0;                               /* 프로그램 종료 */
 }
 ```
