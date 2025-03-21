@@ -18,7 +18,10 @@ void print_char(char c);
 
 int main() {
 	/* To Do: print_char 함수를 여러번 호출해서 화면에 linux라고 표시해보세요 */
-
-	
+	print_char('L');
+	print_char('I');
+	print_char('N');
+	print_char('U');
+	print_char('X');
 	return 0;
 }
